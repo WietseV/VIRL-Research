@@ -1,0 +1,76 @@
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+\usepackage{babel}
+
+\title{Afstudeerproject Systeem- en Netwerkbeheer\\
+	\large Visualizing the UCLL core network in VIRL}
+\date{2020\\ February}
+\author{Arne Bauters\\
+	\texttt{arne.bauters@student.ucll.be}
+	\and 
+	Dieter Maes\\
+	\texttt{dieter.maes@student.ucll.be}
+	\and
+	Wietse Vandeput\\
+	\texttt{wietse.vandeput@student.ucll.be}
+}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\tableofcontents
+	\newpage
+	\section{Intro}
+	\subsection{Assignment}
+	\paragraph{Original assignment: }
+	
+	The assignment given was to virtualise/simulate the UCLL core network using Cisco VIRL.\\
+	The major part of the UCLL core network (using technologies like VRF lite, BGP, OSPF, QoS, ...) has to be virtualised. With this virtualisation/simulation configuration, changes can be tested before beeing pushed to production.\\
+	The question was if VIRL could be a viable solution to get a test environment.\\
+	The goal to get a working topology in VIRL.\\
+	\paragraph{Concrete guidelines: }
+	
+	Like always the assignment diverts slightly from expectations.\\
+	After a couple of sessions with Pieter Geens we defined our scope as following:\\
+	\\
+	We are to research VIRL, its possible limitations as to virtualise the network and the pros and cons of the free devnet versus the paying license.\\
+	The research has to be documented so those who will use VIRL at UCLL can easily learn how to work with the webinterface.\\
+	Also we have to try to implement a specific part of the core network. The topology for this was delivered so we have everything to deliver an attempt at the virtualisation/simulation of this network.\\
+	This document will thus mainly research how to do certain things like VRF lite, etherchannels, multi-area OSPF, etc. in Cisco VIRL. We will use this knowledge to try and simulate the UCLL core network( or part of ).
+	\newpage
+	
+	\section{Pre-setup Research}
+	\subsection{VIRL via Devnet}
+	\paragraph{VIRL in devnetsandbox.cisco.com }
+	Devnet from Cisco serves a free sandbox environment where you can test out multiple things, including VIRL.\\ 
+	It provides resources and a testing environment you can reserve for free for a limited time and a limited use. We noticed reserving resources for a couple of hours up to a day was fairly easy and fast, after a couple of minutes you could connect trough VPN and have access to multiple simulations. (for reservations longer than a day up to a week it were multiple hours of waiting before the test environment was available).\\
+	\\
+	First of we tested the main technologies we knew the core network would need: etherchannel, OSPF, VRF lite, vPC, AVA clustering, etc.\\
+	We did have some trouble with vPC,\\ ""Arne kunt gij hier uitleggen wat het probleem was en hoe ge da probleem hebt opgelost""\\
+	
+	
+	\subsection{Alternatives for VIRL}
+	\paragraph{} ofcourse we tested alternatives for VIRL. We didn't only compare the free VIRL solution through Devnet but we also tested if Gns3 or DCloud could be viable alternatives.\\
+	We found DCloud was very similar to the Devnet VIRL solution, except it had a bigger limit on machines. We could only use up to 2 machines in this test environment.\\
+	\\
+	The gns3 solution put a different problem up for us. Getting access to the Cisco images for all the devices was not as easy as expected and for the sake of this project we decided not to waste any more time on Gns3. As far as we know this could be a solid solution once you have the images.\\
+	
+	\newpage
+	\section{Our test setup}
+	\subsection{Installation Guide}
+	\subsection{Management Guide}
+	\subsection{Users Guide}
+	
+	\newpage
+	\section{The UCLL core network}
+	\subsection{Current specific part of the core network that we virtualised/simulated}
+	\subsection{Our implementation}
+	\subsection{Adaptations and ameliorations to the current network}
+	
+	\newpage
+	\section{Sources}
+	
+\end{document}
